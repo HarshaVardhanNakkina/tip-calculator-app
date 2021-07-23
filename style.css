@@ -1,0 +1,232 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --darker-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --lighter-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  --ff-body: 'Space Mono';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body), monospace;
+  background-color: var(--light-grayish-cyan);
+  /* background: url(./design/desktop-design-empty.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+  color: var(--dark-grayish-cyan);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+label,
+[class$='label'] {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+input {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: right;
+  background-color: transparent;
+  background-color: var(--lighter-grayish-cyan);
+  color: var(--very-dark-cyan);
+  padding: 0.25em 0.75em 0.25em 0;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+}
+input::placeholder {
+  text-transform: capitalize;
+  color: var(--very-dark-cyan);
+}
+input:focus {
+  outline: none;
+}
+
+input.btn {
+  padding-right: 0.5em;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: var(--very-dark-cyan);
+  width: min-content;
+  margin: 3rem auto;
+}
+
+.title--upper {
+  text-transform: uppercase;
+}
+
+.ltr-space-sm {
+  letter-spacing: 2px;
+}
+.ltr-space-md {
+  letter-spacing: 4px;
+}
+.ltr-space-lg {
+  letter-spacing: 8px;
+}
+
+.btn {
+  --ease-time: 150ms;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  transition: background var(--ease-time) ease-in, color var(--ease-time) ease-in;
+}
+
+.btn--fw {
+  width: 100%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.btn--secondary {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: var(--light-grayish-cyan);
+}
+
+.bill {
+  max-width: 970px;
+  background-color: var(--white);
+  padding: 1.5em;
+  border-radius: 1.25em;
+}
+.bill__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.field {
+  width: 100%;
+}
+
+.field__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lighter-grayish-cyan);
+  margin-top: 0.125em;
+  padding-left: 0.75em;
+  border-radius: 4px;
+}
+.field__container:focus-within {
+  outline: 3px solid var(--strong-cyan);
+}
+
+.btn-group__container {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: var(--very-dark-cyan);
+  border-radius: 1.25em;
+  padding: 1.25em;
+  margin-top: 2rem;
+}
+
+.summary__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary__label--amount {
+  font-weight: bold;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.summary__label--person {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: var(--strong-cyan);
+}
+
+.summary__amount {
+  font-size: 1.75em;
+  font-weight: bold;
+  color: var(--strong-cyan);
+}
+
+.summary__reset {
+  padding: 0.5em 0;
+}
+
+@media screen and (min-width: 376px) {
+  .bill {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: auto;
+    padding: 2em;
+  }
+
+  .bill__form {
+    align-items: flex-start;
+  }
+
+  .btn-group__container {
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  }
+
+  .summary {
+    justify-content: flex-start;
+    gap: 3rem;
+    margin: 0;
+  }
+
+  .summary__reset {
+    margin-top: auto;
+  }
+}
